@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Menu card</title>
 </head>
-<body bgcolor="#2e8b57">
+<body bgcolor="#2f4f4f">
 
 <h1>
     Beverage menu
@@ -13,11 +13,41 @@
     Back
 </button>
 <ul>
-    <li style="color:sandybrown;">3.99$    <input type="checkbox">Coffee     </li>
-    <li style="color:darkgoldenrod;">1.99$    <input type="checkbox">Beer       </li>
-    <li style="color:saddlebrown;">99.99$   <input type="checkbox">Wine       </li>
-    <li style="color:lawngreen; font-family: 'Comic Sans MS'">Priceless<input type="checkbox">Toxic Waste</li>
+    <li style="color:sandybrown;">3.99$    <input type="checkbox" id="check1" value = 3.99>Coffee</li>
+    <li style="color:darkgoldenrod;">1.99$    <input type="checkbox" id="check2" value = 1.99>Beer</li>
+    <li style="color:sandybrown;">99.99$   <input type="checkbox" id="check3" value = 99.99>Wine</li>
+    <li style="color:lawngreen; font-family: 'Comic Sans MS'">Priceless    Toxic Waste</li>
 </ul>
+<button onclick="myFunc()">
+    Get Price
+</button>
+<p id="price", style="font-size: 200%; color: white"></p>
+<script>
+    function myFunc(){
+        var checkbox1 = document.getElementById("check1");
+        var checkbox2 = document.getElementById("check2");
+        var checkbox3 = document.getElementById("check3");
+        let coffee = document.getElementById("check1").value;
+        let beer = document.getElementById("check2").value;
+        let wine = document.getElementById("check3").value;
+        var text = document.getElementById("price");
+        var toxicwaste = "u cant order that";
+        var sum = 0;
+        if(checkbox1.checked===true){
+
+            sum += +coffee;
+            text.innerHTML = sum;
+        }
+        if(checkbox2.checked===true){
+            sum += +beer;
+            text.innerHTML = sum;
+        }
+        if(checkbox3.checked===true){
+            sum += +wine;
+            text.innerHTML = sum;
+        }
+    }
+</script>
 
 
 </body>
